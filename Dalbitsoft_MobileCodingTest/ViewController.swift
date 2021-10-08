@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         
         getData()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
             let myTableViewCellNib = UINib(nibName: String(describing: MyTableViewCell.self), bundle: nil)
             
             self.currentLectureTableView.register(myTableViewCellNib, forCellReuseIdentifier: "myTableViewCell")
@@ -127,8 +127,14 @@ class ViewController: UIViewController {
     }
 }
 
+
+
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == currentLectureTableView && indexPath.row == 0 {
+            self.performSegue(withIdentifier: "toWebView", sender: nil)
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {

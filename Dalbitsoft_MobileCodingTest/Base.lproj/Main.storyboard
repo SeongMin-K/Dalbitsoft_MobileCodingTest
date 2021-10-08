@@ -100,6 +100,16 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="290" id="Lik-54-GjW"/>
                                                         </constraints>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6ro-Uq-VCq" customClass="MyTableViewCell" customModule="Dalbitsoft_MobileCodingTest" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="44.666666030883789" width="394" height="43.666667938232422"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ro-Uq-VCq" id="W4Z-I3-TkL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="43.666667938232422"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </tableViewCellContentView>
+                                                            </tableViewCell>
+                                                        </prototypes>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="공개강좌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipt-K5-0yz">
                                                         <rect key="frame" x="10" y="364" width="404" height="24"/>
@@ -197,11 +207,47 @@
                         <outlet property="userImage" destination="p8X-dZ-1ug" id="8yJ-zR-Vra"/>
                         <outlet property="userName" destination="beJ-Ie-KiG" id="M4a-Pc-inz"/>
                         <outlet property="week" destination="I9g-yz-ZE6" id="JNM-jL-UqD"/>
+                        <segue destination="xld-0k-bO1" kind="show" identifier="toWebView" id="dtn-e5-TYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.681159420289859" y="55.434782608695656"/>
+            <point key="canvasLocation" x="103" y="55"/>
+        </scene>
+        <!--My Web Kit Controller-->
+        <scene sceneID="llt-ML-49b">
+            <objects>
+                <viewController id="xld-0k-bO1" customClass="MyWebKitController" customModule="Dalbitsoft_MobileCodingTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tLP-md-a8D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mo4-bL-5OP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vZ3-AE-Mcu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mo4-bL-5OP" firstAttribute="leading" secondItem="vZ3-AE-Mcu" secondAttribute="leading" id="8Nr-uF-jTo"/>
+                            <constraint firstItem="mo4-bL-5OP" firstAttribute="top" secondItem="vZ3-AE-Mcu" secondAttribute="top" id="VPN-wp-uqk"/>
+                            <constraint firstItem="vZ3-AE-Mcu" firstAttribute="trailing" secondItem="mo4-bL-5OP" secondAttribute="trailing" id="ihJ-KR-GPT"/>
+                            <constraint firstItem="vZ3-AE-Mcu" firstAttribute="bottom" secondItem="mo4-bL-5OP" secondAttribute="bottom" id="yaq-nu-z3L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gk0-Bq-Zy1"/>
+                    <connections>
+                        <outlet property="webView" destination="mo4-bL-5OP" id="4To-Vc-9cz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="boA-Uh-yNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="55"/>
         </scene>
     </scenes>
     <resources>
