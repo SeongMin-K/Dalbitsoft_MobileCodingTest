@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="aZx-bK-pLP" customClass="MyTableViewCell" customModule="Dalbitsoft_MobileCodingTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZx-bK-pLP" id="aNo-dE-2ls">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="162" translatesAutoresizingMaskIntoConstraints="NO" id="dVB-6A-1bc">
+                        <rect key="frame" x="10" y="10" width="394" height="50"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rmI-22-DF0">
+                                <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중국 문화의 이해 (002)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-d9-b1U">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박영수 교수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sab-Mz-kOK">
+                                        <rect key="frame" x="0.0" y="25" width="64.5" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AB9-N6-cWw">
+                                <rect key="frame" x="334" y="0.0" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AB9-N6-cWw" secondAttribute="trailing" constant="10" id="Oi1-Lb-6bR"/>
+                            <constraint firstItem="AB9-N6-cWw" firstAttribute="leading" secondItem="rmI-22-DF0" secondAttribute="trailing" constant="10" id="p4O-QQ-TnS"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="dVB-6A-1bc" secondAttribute="trailing" constant="10" id="2AA-HR-8Pz"/>
+                    <constraint firstAttribute="bottom" secondItem="dVB-6A-1bc" secondAttribute="bottom" constant="10" id="Se8-km-sCo"/>
+                    <constraint firstItem="dVB-6A-1bc" firstAttribute="top" secondItem="aNo-dE-2ls" secondAttribute="top" constant="10" id="liz-oq-d8B"/>
+                    <constraint firstItem="dVB-6A-1bc" firstAttribute="leading" secondItem="aNo-dE-2ls" secondAttribute="leading" constant="10" id="sry-ZE-e6G"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="rmI-22-DF0" firstAttribute="centerY" secondItem="aZx-bK-pLP" secondAttribute="centerY" id="IBF-cX-vea"/>
+                <constraint firstItem="AB9-N6-cWw" firstAttribute="centerY" secondItem="aZx-bK-pLP" secondAttribute="centerY" id="zF7-Te-QoS"/>
+            </constraints>
+            <connections>
+                <outlet property="lectureName" destination="HzF-d9-b1U" id="aEd-uj-2cA"/>
+                <outlet property="notificationCount" destination="AB9-N6-cWw" id="Jf1-v1-zBS"/>
+                <outlet property="professorName" destination="sab-Mz-kOK" id="4g0-kP-TiB"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
+        </tableViewCell>
+    </objects>
+</document>
