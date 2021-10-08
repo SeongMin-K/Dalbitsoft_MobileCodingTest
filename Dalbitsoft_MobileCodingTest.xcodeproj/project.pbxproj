@@ -15,6 +15,8 @@
 		3E37E835270FFB6500911A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E37E833270FFB6500911A0F /* LaunchScreen.storyboard */; };
 		3E37E83D27100C6000911A0F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E37E83C27100C6000911A0F /* MyTableViewCell.xib */; };
 		3E37E83F27101C5D00911A0F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37E83E27101C5D00911A0F /* MyTableViewCell.swift */; };
+		3EF93CF827103F3D00FE0EAC /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF93CF727103F3D00FE0EAC /* RealmData.swift */; };
+		DA500565B8C84789148D4E8A /* Pods_Dalbitsoft_MobileCodingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D1A45A7706ABD1EB86AD30 /* Pods_Dalbitsoft_MobileCodingTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		3E37E836270FFB6500911A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E37E83C27100C6000911A0F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		3E37E83E27101C5D00911A0F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		3EF93CF727103F3D00FE0EAC /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmData.swift; path = /Users/seongmin/Downloads/Dalbitsoft_MobileCodingTest/Dalbitsoft_MobileCodingTest/RealmData.swift; sourceTree = "<absolute>"; };
+		65AE77B6392F671B7854DADE /* Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig"; path = "Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
+		C4D1A45A7706ABD1EB86AD30 /* Pods_Dalbitsoft_MobileCodingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dalbitsoft_MobileCodingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2923C52ADB785DBED627CBD /* Pods-Dalbitsoft_MobileCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalbitsoft_MobileCodingTest.release.xcconfig"; path = "Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA500565B8C84789148D4E8A /* Pods_Dalbitsoft_MobileCodingTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				3E37E827270FFB6300911A0F /* Dalbitsoft_MobileCodingTest */,
 				3E37E826270FFB6300911A0F /* Products */,
+				98CB1C526102F171075A8FA1 /* Pods */,
+				CA969C9BE1217BDF73967C76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +69,7 @@
 		3E37E827270FFB6300911A0F /* Dalbitsoft_MobileCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				3EF93CF727103F3D00FE0EAC /* RealmData.swift */,
 				3E37E828270FFB6300911A0F /* AppDelegate.swift */,
 				3E37E82A270FFB6300911A0F /* SceneDelegate.swift */,
 				3E37E82C270FFB6300911A0F /* ViewController.swift */,
@@ -73,6 +83,23 @@
 			path = Dalbitsoft_MobileCodingTest;
 			sourceTree = "<group>";
 		};
+		98CB1C526102F171075A8FA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65AE77B6392F671B7854DADE /* Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig */,
+				D2923C52ADB785DBED627CBD /* Pods-Dalbitsoft_MobileCodingTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CA969C9BE1217BDF73967C76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4D1A45A7706ABD1EB86AD30 /* Pods_Dalbitsoft_MobileCodingTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E37E839270FFB6500911A0F /* Build configuration list for PBXNativeTarget "Dalbitsoft_MobileCodingTest" */;
 			buildPhases = (
+				2E3B890ECDEBC37757F2F771 /* [CP] Check Pods Manifest.lock */,
 				3E37E821270FFB6300911A0F /* Sources */,
 				3E37E822270FFB6300911A0F /* Frameworks */,
 				3E37E823270FFB6300911A0F /* Resources */,
+				901108F080BCAD5AFDDEC313 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +169,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E3B890ECDEBC37757F2F771 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dalbitsoft_MobileCodingTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		901108F080BCAD5AFDDEC313 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E37E821270FFB6300911A0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +218,7 @@
 			files = (
 				3E37E82D270FFB6300911A0F /* ViewController.swift in Sources */,
 				3E37E83F27101C5D00911A0F /* MyTableViewCell.swift in Sources */,
+				3EF93CF827103F3D00FE0EAC /* RealmData.swift in Sources */,
 				3E37E829270FFB6300911A0F /* AppDelegate.swift in Sources */,
 				3E37E82B270FFB6300911A0F /* SceneDelegate.swift in Sources */,
 			);
@@ -292,6 +364,7 @@
 		};
 		3E37E83A270FFB6500911A0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65AE77B6392F671B7854DADE /* Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +376,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,6 +394,7 @@
 		};
 		3E37E83B270FFB6500911A0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2923C52ADB785DBED627CBD /* Pods-Dalbitsoft_MobileCodingTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -331,6 +406,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
