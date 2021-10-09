@@ -101,7 +101,7 @@
                                                             <constraint firstAttribute="height" constant="290" id="Lik-54-GjW"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6ro-Uq-VCq" customClass="MyTableViewCell" customModule="Dalbitsoft_MobileCodingTest" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myTableViewCell" id="6ro-Uq-VCq" customClass="MyTableViewCell" customModule="Dalbitsoft_MobileCodingTest" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="394" height="43.666667938232422"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ro-Uq-VCq" id="W4Z-I3-TkL">
@@ -203,7 +203,6 @@
                         <outlet property="month" destination="Rok-zq-b5i" id="oEA-If-Bhp"/>
                         <outlet property="openLectureTableView" destination="IiS-fd-MJS" id="WbH-Dh-6rX"/>
                         <outlet property="semester" destination="EBV-Bu-LRs" id="DeF-lo-ccJ"/>
-                        <outlet property="tabBar" destination="ZzP-sy-qWz" id="dyr-EB-EfJ"/>
                         <outlet property="userImage" destination="p8X-dZ-1ug" id="8yJ-zR-Vra"/>
                         <outlet property="userName" destination="beJ-Ie-KiG" id="M4a-Pc-inz"/>
                         <outlet property="week" destination="I9g-yz-ZE6" id="JNM-jL-UqD"/>

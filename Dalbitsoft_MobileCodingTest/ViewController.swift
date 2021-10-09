@@ -32,7 +32,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var currentLectureTableView: UITableView!
     @IBOutlet weak var openLectureTableView: UITableView!
-    @IBOutlet weak var tabBar: UITabBar!
     
     // Realm 가져오기
     let realm = try! Realm()
@@ -53,6 +52,8 @@ class ViewController: UIViewController {
         
         // 프로필 사진 둥글게 만들기
         userImage.layer.cornerRadius = userImage.frame.width / 2
+        
+        swipeRecognizer()
         
         // Realm 파일 위치
         print("Location : \(Realm.Configuration.defaultConfiguration.fileURL!)")
@@ -84,6 +85,7 @@ class ViewController: UIViewController {
         })
     }
     
+    //MARK: - API에서 JSON 받아서 파싱하기
     fileprivate func getData() {
         let url = "https://api2.coursemos.kr/coding_test.php"
         AF.request(url,
@@ -125,10 +127,38 @@ class ViewController: UIViewController {
                 }
             }
     }
+    
+    //MARK: - 스와이프 제스쳐
+    func swipeRecognizer() {
+        print(#fileID, #function, "called")
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        print(#fileID, #function, "called")
+
+        // Count 1씩 증가
+        for i in 0..<currentLectureCountArray.count {
+            currentLectureCountArray[i] += 1
+        }
+        for i in 0..<openLectureCountArray.count {
+            openLectureCountArray[i] += 1
+        }
+        
+//        print("current: \(self.currentLectureCountArray)")
+//        print("open: \(self.openLectureCountArray)")
+        
+        // 테이블 뷰 갱신
+        DispatchQueue.main.async {
+            self.currentLectureTableView.reloadData()
+            self.openLectureTableView.reloadData()
+        }
+    }
 }
 
-
-
+//MARK: - TableView Delegate
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == currentLectureTableView && indexPath.row == 0 {
@@ -137,6 +167,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+//MARK: - TableView DataSource
 extension ViewController: UITableViewDataSource {
     // 테이블 뷰 셀의 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

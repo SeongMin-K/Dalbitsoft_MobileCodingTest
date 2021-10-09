@@ -16,7 +16,7 @@
 		3E37E83D27100C6000911A0F /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E37E83C27100C6000911A0F /* MyTableViewCell.xib */; };
 		3E37E83F27101C5D00911A0F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37E83E27101C5D00911A0F /* MyTableViewCell.swift */; };
 		3EA9899E2710A9F800D6ACEF /* MyWebKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9899D2710A9F800D6ACEF /* MyWebKitController.swift */; };
-		3EF93CF827103F3D00FE0EAC /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF93CF727103F3D00FE0EAC /* RealmData.swift */; };
+		3EB4B4D22711830400F4FCE3 /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB4B4D12711830400F4FCE3 /* RealmData.swift */; };
 		DA500565B8C84789148D4E8A /* Pods_Dalbitsoft_MobileCodingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D1A45A7706ABD1EB86AD30 /* Pods_Dalbitsoft_MobileCodingTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		3E37E83C27100C6000911A0F /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		3E37E83E27101C5D00911A0F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		3EA9899D2710A9F800D6ACEF /* MyWebKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebKitController.swift; sourceTree = "<group>"; };
-		3EF93CF727103F3D00FE0EAC /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmData.swift; path = /Users/seongmin/Downloads/Dalbitsoft_MobileCodingTest/Dalbitsoft_MobileCodingTest/RealmData.swift; sourceTree = "<absolute>"; };
+		3EB4B4D12711830400F4FCE3 /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
 		65AE77B6392F671B7854DADE /* Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig"; path = "Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D1A45A7706ABD1EB86AD30 /* Pods_Dalbitsoft_MobileCodingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dalbitsoft_MobileCodingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2923C52ADB785DBED627CBD /* Pods-Dalbitsoft_MobileCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dalbitsoft_MobileCodingTest.release.xcconfig"; path = "Target Support Files/Pods-Dalbitsoft_MobileCodingTest/Pods-Dalbitsoft_MobileCodingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		3E37E827270FFB6300911A0F /* Dalbitsoft_MobileCodingTest */ = {
 			isa = PBXGroup;
 			children = (
-				3EF93CF727103F3D00FE0EAC /* RealmData.swift */,
+				3EB4B4D12711830400F4FCE3 /* RealmData.swift */,
 				3E37E828270FFB6300911A0F /* AppDelegate.swift */,
 				3E37E82A270FFB6300911A0F /* SceneDelegate.swift */,
 				3E37E82C270FFB6300911A0F /* ViewController.swift */,
@@ -220,8 +220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E37E82D270FFB6300911A0F /* ViewController.swift in Sources */,
+				3EB4B4D22711830400F4FCE3 /* RealmData.swift in Sources */,
 				3E37E83F27101C5D00911A0F /* MyTableViewCell.swift in Sources */,
-				3EF93CF827103F3D00FE0EAC /* RealmData.swift in Sources */,
 				3EA9899E2710A9F800D6ACEF /* MyWebKitController.swift in Sources */,
 				3E37E829270FFB6300911A0F /* AppDelegate.swift in Sources */,
 				3E37E82B270FFB6300911A0F /* SceneDelegate.swift in Sources */,
