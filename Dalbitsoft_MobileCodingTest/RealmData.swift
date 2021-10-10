@@ -8,13 +8,12 @@
 import RealmSwift
 
 class RealmData: Object {
-    @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var professor: String = ""
     @objc dynamic var count: Int = 0
     
-    // id 고유 값 설정
+    // name 고유 값 설정
     override class func primaryKey() -> String? {
-        return "id"
+        return "name"
     }
 }

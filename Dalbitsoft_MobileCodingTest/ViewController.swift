@@ -10,18 +10,6 @@ import RealmSwift
 import Alamofire
 import SwiftyJSON
 
-struct Class {
-    let name: String
-    let professor: String
-    let count: Int
-}
-
-struct Public {
-    let name: String
-    let place: String
-    let count: Int
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var userImage: UIImageView!
@@ -35,7 +23,6 @@ class ViewController: UIViewController {
     
     // Realm 가져오기
     let realm = try! Realm()
-    var id = 0
     
     var currentLectureNameArray = Array<String>()
     var currentLectureProfessorArray = Array<String>()
@@ -59,9 +46,7 @@ class ViewController: UIViewController {
         print("Location : \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
         // Realm 기존 데이터 모두 삭제
-        try! realm.write {
-            realm.deleteAll()
-        }
+//        try! realm.write { realm.deleteAll() }
         
         getData()
         
@@ -87,45 +72,65 @@ class ViewController: UIViewController {
     
     //MARK: - API에서 JSON 받아서 파싱하기
     fileprivate func getData() {
-        let url = "https://api2.coursemos.kr/coding_test.php"
-        AF.request(url,
-                   method: .get,
-                   parameters: nil,
-                   encoding: JSONEncoding.default,
-                   headers: ["Content-Type":"application/json; charset=UTF-8",
-                             "Accept":"application/json; charset=UTF-8"])
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    
-                    for item in json["class"].arrayValue {
-                        let name = item["name"].stringValue
-                        let professor = item["professor"].stringValue
-                        let count = item["count"].intValue
-                        self.currentLectureNameArray.append(name)
-                        self.currentLectureProfessorArray.append(professor)
-                        self.currentLectureCountArray.append(count)
-//                        print(self.currentLectureCountArray)
-//                        print("Current: \(name), \(professor), \(count)")
+        // Realm에 저장된 데이터가 없을 때
+        if realm.isEmpty {
+            let url = "https://api2.coursemos.kr/coding_test.php"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       encoding: JSONEncoding.default,
+                       headers: ["Content-Type":"application/json; charset=UTF-8",
+                                 "Accept":"application/json; charset=UTF-8"])
+                .validate(statusCode: 200..<300)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        
+                        for item in json["class"].arrayValue {
+                            let name = item["name"].stringValue
+                            let professor = item["professor"].stringValue
+                            let count = item["count"].intValue
+                            self.currentLectureNameArray.append(name)
+                            self.currentLectureProfessorArray.append(professor + " 교수")
+                            self.currentLectureCountArray.append(count)
+    //                        print(self.currentLectureCountArray)
+    //                        print("Current: \(name), \(professor), \(count)")
+                        }
+                        
+                        for item in json["public"].arrayValue {
+                            let place = item["place"].stringValue
+                            let name = item["name"].stringValue
+                            let count = item["count"].intValue
+                            self.openLectureNameArray.append(name)
+                            self.openLecturePlaceArray.append(place)
+                            self.openLectureCountArray.append(count)
+    //                        print(self.openLectureCountArray)
+    //                        print("Open: \(name), \(place), \(count)")
+                        }
+                        
+                    case .failure(let error):
+                        print(error)
                     }
-                    
-                    for item in json["public"].arrayValue {
-                        let place = item["place"].stringValue
-                        let name = item["name"].stringValue
-                        let count = item["count"].intValue
-                        self.openLectureNameArray.append(name)
-                        self.openLecturePlaceArray.append(place)
-                        self.openLectureCountArray.append(count)
-//                        print(self.openLectureCountArray)
-//                        print("Open: \(name), \(place), \(count)")
-                    }
-                    
-                case .failure(let error):
-                    print(error)
                 }
+        }
+        // Realm에 이미 저장된 데이터가 있을 때
+        else {
+            let list = realm.objects(RealmData.self)
+            var count = 0
+            for item in list {
+                if count < 2 {
+                    openLectureNameArray.append(item.name)
+                    openLecturePlaceArray.append(item.professor)
+                    openLectureCountArray.append(item.count)
+                } else {
+                    currentLectureNameArray.append(item.name)
+                    currentLectureProfessorArray.append(item.professor)
+                    currentLectureCountArray.append(item.count)
+                }
+                count += 1
             }
+        }
     }
     
     //MARK: - 스와이프 제스쳐
@@ -138,7 +143,7 @@ class ViewController: UIViewController {
     
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         print(#fileID, #function, "called")
-
+        
         // Count 1씩 증가
         for i in 0..<currentLectureCountArray.count {
             currentLectureCountArray[i] += 1
@@ -180,7 +185,7 @@ extension ViewController: UITableViewDataSource {
         
         if tableView == currentLectureTableView {
             cell.lectureName.text = currentLectureNameArray[indexPath.row]
-            cell.professorName.text = currentLectureProfessorArray[indexPath.row] + " 교수"
+            cell.professorName.text = currentLectureProfessorArray[indexPath.row]
             cell.notificationCount.text = String(currentLectureCountArray[indexPath.row])
         }
         else if tableView == openLectureTableView {
@@ -191,17 +196,13 @@ extension ViewController: UITableViewDataSource {
         
         let data = RealmData()
         
-        data.id = id
         data.name = cell.lectureName.text!
         data.professor = cell.professorName.text!
         data.count = Int(cell.notificationCount.text!)!
-        id += 1
-        
-        print(data)
         
         // Realm에 저장하기
         try! realm.write {
-            realm.add(data)
+            realm.add(data, update: .modified)
         }
         
         return cell
